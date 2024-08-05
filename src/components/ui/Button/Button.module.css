@@ -13,3 +13,8 @@
     border: 1px solid #ac0b0b;
     background-color: #cc2c2c;
 }
+
+.Button img{
+    width: 32px;
+    height: 32px;
+}

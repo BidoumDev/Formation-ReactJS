@@ -37,6 +37,9 @@ function App() {
     <div className="App">
       <Button text="Valider"/>
       <Button text="Annuler"/>
+      <Button>Valider</Button>
+      <Button>Annuler</Button>
+      <Button bgColor="red"><img src="/delete.png"/>Cancel</Button>
     </div>
   );
 }
