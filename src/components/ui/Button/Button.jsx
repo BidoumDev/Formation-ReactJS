@@ -11,12 +11,15 @@ const Button = (props) => {
     );
 }
 Button.propTypes={
-    bgColor: PropTypes.string.isRequired,
+    bgColor: PropTypes.string,
     color: PropTypes.oneOf(['white','black']),
     style: PropTypes.exact({
         textDecoration: PropTypes.oneOf(['underline', 'none']),
         fontWeight: PropTypes.oneOf([100, 500, 900])
     })
     
+}
+Button.defaultProps = {
+    bgColor: "yellow"
 }
 export default Button;
