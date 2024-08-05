@@ -40,8 +40,8 @@ function App() {
       <Button text="Annuler"/>*/
       }
       <Button>Valider</Button>
-      <Button>Annuler</Button>
-      <Button bgColor="red" style={{textDecoration: 'underline'}}><img src="/delete.png"/>Cancel</Button>
+      <Button color="grey" >Annuler</Button>
+      <Button bgColor="red" color="white" style={{textDecoration: 'underline'}}><img src="/delete.png"/>Cancel</Button>
     </div>
   );
 }
