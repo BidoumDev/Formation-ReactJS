@@ -39,9 +39,9 @@ function App() {
       /*<Button text="Valider"/>
       <Button text="Annuler"/>*/
       }
-      <Button>Valider</Button>
-      <Button color="grey" >Annuler</Button>
-      <Button bgColor="red" color="white" style={{textDecoration: 'underline'}}><img src="/delete.png"/>Cancel</Button>
+      <Button bgColor="red" color="white">Valider</Button>
+      <Button bgColor="red" color="white" style={{textDecoration: 'none', fontWeight: 100}}>Annuler</Button>
+      <Button bgColor="red" color="white" style={{textDecoration: 'underline', fontWeight: 900}}><img src="/delete.png"/>Cancel</Button>
     </div>
   );
 }
