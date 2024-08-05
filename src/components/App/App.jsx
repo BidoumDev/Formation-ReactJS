@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'*/
 
 import React from "react";
+import Button from "../ui/Button/Button.jsx";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -32,7 +33,12 @@ function App() {
       </p>
     </>
   )*/
-  return <div>DEMAT BREAIZH</div>
+  return (
+    <div className="App">
+      <Button text="Valider"/>
+      <Button text="Annuler"/>
+    </div>
+  );
 }
 
 export default App

@@ -1,0 +1,15 @@
+.Button{
+    border-radius: 6px;
+    padding: 5px 10px;
+    /*color: hsl(120, 25%, 25%);*/
+    display: inline;
+    margin: 0 25px 25px 0; 
+
+    font-size: 18px;
+    font-weight: 500;
+    
+    color: #EEE;
+    box-shadow: 25px 25px 25px grey;
+    border: 1px solid #ac0b0b;
+    background-color: #cc2c2c;
+}
