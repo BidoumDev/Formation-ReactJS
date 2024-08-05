@@ -35,11 +35,13 @@ function App() {
   )*/
   return (
     <div className="App">
-      <Button text="Valider"/>
-      <Button text="Annuler"/>
+      {
+      /*<Button text="Valider"/>
+      <Button text="Annuler"/>*/
+      }
       <Button>Valider</Button>
       <Button>Annuler</Button>
-      <Button bgColor="red"><img src="/delete.png"/>Cancel</Button>
+      <Button bgColor="red" style={{textDecoration: 'underline'}}><img src="/delete.png"/>Cancel</Button>
     </div>
   );
 }
