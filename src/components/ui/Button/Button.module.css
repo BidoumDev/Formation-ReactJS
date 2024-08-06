@@ -22,3 +22,12 @@
 .Button.yellow{
     color: yellow;
 }
+.Button:hover{
+    box-shadow: 15px 15px 25px grey;
+    border: 1px solid #ac0b0b;
+}
+
+.clicked{
+    box-shadow: 5px 5px 25px rgb(0, 0, 0);
+    text-decoration: underline black;
+}

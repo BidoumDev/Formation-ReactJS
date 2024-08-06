@@ -33,12 +33,10 @@ const Button = (props) => {
         <div>isClicked:{isClicked? 'Oui': 'Non'}</div>
         <div 
             style={{...props.style,backgroundColor: props.bgColor}} 
-            className={style.Button} 
+            className={`${style.Button}${isClicked?' '+style.clicked:''}`}
             data-testid="Button"
             onClick={(evt)=>{
-                setIsClicked(isClicked+1);
-                //isClicked != isClicked;
-                console.log("isClicked", isClicked, evt);
+                setIsClicked(true);
             }}
         >
             {props.children}
