@@ -35,6 +35,7 @@ const Button = (props) => {
         <>
         <div>isClicked:{isClicked? 'Oui': 'Non'}</div>
         <button 
+            type={props.type}
             style={{...props.style,backgroundColor: props.bgColor}} 
             className={`${style.Button}${isClicked?' '+style.clicked:''}`}
             data-testid="Button"
@@ -54,11 +55,13 @@ Button.propTypes={
     style: PropTypes.exact({
         textDecoration: PropTypes.oneOf(['underline', 'none']),
         fontWeight: PropTypes.oneOf([100, 500, 900])
-    })    
+    }),
+    type: PropTypes.oneOf(['button','submit','reset'])
 }
 
 Button.defaultProps = {
-    bgColor: "yellow"
+    bgColor: "yellow",
+    type: 'button'
 }
 
 export default Button;
