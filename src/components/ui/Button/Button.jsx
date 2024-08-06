@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const Button = (props) => {
     //let isClicked = false;
     //console.log(isClicked, props);
-    const [isClicked, setIsClicked] = useState(false)
+    const [isClicked, setIsClicked] = useState(1)
 
     useEffect(() => {
         console.log('dans l effet', isClicked);
@@ -21,7 +21,7 @@ const Button = (props) => {
             className={style.Button} 
             data-testid="Button"
             onClick={(evt)=>{
-                setIsClicked(isClicked++);
+                setIsClicked(isClicked+1);
                 //isClicked != isClicked;
                 console.log("isClicked", isClicked, evt);
             }}
