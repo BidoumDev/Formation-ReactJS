@@ -1,9 +1,8 @@
-/*import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect, useState } from 'react'
+/*import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'*/
 
-import React, { useEffect } from "react";
 import Button from "../ui/Button/Button.jsx";
 
 function App() {
@@ -33,15 +32,36 @@ function App() {
       </p>
     </>
   )*/
+
+  //let counter = 0;
+  const [counter, setCounter] = useState(-1);  // Valeur étatique
+
+  useEffect(() => { 
+    // Mount         
+    return () => {
+      // Unmount
+    };
+  }, [])              // Se déclenche comme un constructeur ou onReady
+
+  useEffect(() => {
+    return () => {
+      //effect
+    };
+  })     
+
   return (
     <div className="App">
       {
       /*<Button text="Valider"/>
       <Button text="Annuler"/>*/
       }
-      <Button color="white">Valider</Button>
-      <Button bgColor="red" color="white" style={{textDecoration: 'none', fontWeight: 100}}>Annuler</Button>
-      <Button bgColor="red" color="white" style={{textDecoration: 'underline', fontWeight: 900}}><img src="/delete.png"/>Cancel</Button>
+      <div>Comteur : {counter}</div>
+      <Button bgColor="green" onButtonClick={()=>{
+        setCounter(counter+1);
+      }}>+1</Button>
+      <Button bgColor="red" onButtonClick={()=>{
+        setCounter(counter-1);
+      }}>-1</Button>
     </div>
   );
 }
