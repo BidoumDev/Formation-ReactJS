@@ -27,7 +27,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  children: 'Template component'
+  children: 'Template Footer'
 };
 
 export default Footer;

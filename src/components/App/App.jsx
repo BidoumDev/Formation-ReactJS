@@ -1,69 +1,47 @@
-import { useEffect, useState } from 'react'
-/*import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'*/
+/*
 
-import Button from "../ui/Button/Button.jsx";
+█████╗ ██████╗ ██████╗ 
+██╔══██╗██╔══██╗██╔══██╗
+███████║██████╔╝██████╔╝
+██╔══██║██╔═══╝ ██╔═══╝ 
+██║  ██║██║     ██║     
+╚═╝  ╚═╝╚═╝     ╚═╝     
+*/                 
 
-function App() {
-  //const [count, setCount] = useState(0)
+import React, { useEffect, useState } from 'react'
+import FlexHThirdGrow from '../layout/FlexHThirdGrow/FlexHThirdGrow'
+import Header from '../ui/Header/Header'
+import NavBar from '../ui/NavBar/NavBar'
+import Footer from '../ui/Footer/Footer'
+import FlexWFirstGrow from '../layout/FlexWFirstGrow/FlexWFirstGrow'
+import MemeForm from '../functionnal/MemeForm/MemeForm'
+//import MemeSvgViewer from '../ui/MemeSVGViewer/MemeSVGViewer'
+import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 
-  /*return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )*/
-
-  //let counter = 0;
-  const [counter, setCounter] = useState(-1);  // Valeur étatique
-
-  useEffect(() => { 
-    // Mount         
-    return () => {
-      // Unmount
-    };
-  }, [])              // Se déclenche comme un constructeur ou onReady
+const App = (props) => {
+  const [meme, setMeme] = useState(emptyMeme);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    return () => {
-      //effect
-    };
-  })     
-
+    fetch('http://localhost:5679/images')
+    .then(r=>r.json())
+    .then((arr) => setImages(arr))
+    ;
+  }, [])
   return (
-    <div className="App">
-      {
-      /*<Button text="Valider"/>
-      <Button text="Annuler"/>*/
-      }
-      <div>Comteur : {counter}</div>
-      <Button bgColor="green" onButtonClick={()=>{
-        setCounter(counter+1);
-      }}>+1</Button>
-      <Button bgColor="red" onButtonClick={()=>{
-        setCounter(counter-1);
-      }}>-1</Button>
+    <div className='App'>
+        <FlexHThirdGrow>
+            <Header></Header>
+            <NavBar/>
+            <FlexWFirstGrow>
+                <MemeSVGViewer image={undefined} meme={emptyMeme} bassPath="" />
+                <MemeForm images={images} />
+            </FlexWFirstGrow>
+            <div>{JSON.stringify(images)}</div>
+            <Footer />
+        </FlexHThirdGrow>
     </div>
-  );
+  )
 }
 
 export default App

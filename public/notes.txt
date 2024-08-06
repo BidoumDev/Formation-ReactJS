@@ -8,3 +8,8 @@ Constantes et sceaux :
 
 Générer à partir des templates (terminal):
     yarn genLayout FlexWFirstGrow FlexHThirdGrow
+
+
+Emuler un serveur json (mock)
+    yarn add -D json-server
+ 

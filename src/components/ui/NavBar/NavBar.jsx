@@ -1,24 +1,22 @@
-/*
-
-
-  _____ _____ __  __ ____  _        _  _____ _____   _   _ ___ 
- |_   _| ____|  \/  |  _ \| |      / \|_   _| ____| | | | |_ _|
-   | | |  _| | |\/| | |_) | |     / _ \ | | |  _|   | | | || | 
-   | | | |___| |  | |  __/| |___ / ___ \| | | |___  | |_| || | 
-   |_| |_____|_|  |_|_|   |_____/_/   \_\_| |_____|  \___/|___|
-                                                               
-
-
-*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NavBar.module.css';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 const NavBar = (props) => {     // Arrow function
   return (
-    <div className={styles.NavBar} data-testid="NavBar">
-      {props.children}
-    </div>
+    <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Home</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Thumbnail</Nav.Link>
+            <Nav.Link href="#features">edit id:1</Nav.Link>
+            <Nav.Link href="#pricing">Nouveau</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
   );
 };
 
@@ -27,7 +25,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  children: 'Template component'
+  children: 'Template NavBar'
 };
 
 export default NavBar;

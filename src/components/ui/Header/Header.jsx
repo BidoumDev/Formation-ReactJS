@@ -17,7 +17,9 @@ import styles from './Header.module.css';
 const Header = (props) => {     // Arrow function
   return (
     <div className={styles.Header} data-testid="Header">
-      {props.children}
+      <span className={styles.Title}>Meme</span>
+      <span className={styles.SubTitle}>generator</span>
+      {/*props.children*/}
     </div>
   );
 };
@@ -27,7 +29,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  children: 'Template component'
+  children: 'Template Header'
 };
 
 export default Header;

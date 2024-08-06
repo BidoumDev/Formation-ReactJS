@@ -12,11 +12,11 @@
 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MemeSvgViewer.module.css';
+import styles from './MemeSVGViewer.module.css';
 
 const MemeSvgViewer = (props) => {     // Arrow function
   return (
-    <div className={styles.MemeSvgViewer} data-testid="MemeSvgViewer">
+    <div className={styles.MemeSvgViewer} data-testid="MemeSVGViewer">
       {props.children}
     </div>
   );
@@ -27,7 +27,7 @@ MemeSvgViewer.propTypes = {
 };
 
 MemeSvgViewer.defaultProps = {
-  children: 'Template component'
+  children: 'Template MemeSVGViewer'
 };
 
 export default MemeSvgViewer;

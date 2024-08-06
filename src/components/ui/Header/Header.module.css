@@ -1,1 +1,14 @@
-.Header {}
+.Header {
+    padding: 5px 0 5px 20px;
+    background-color: rgb(166, 49, 43)
+}
+
+.Header .Title{
+    font-size: 32px;
+    color: rgb(255, 245, 245);
+}
+.Header .SubTitle{
+    font-size: 24px;
+    margin-left: 8px;
+    color: rgb(255, 239, 91);
+}
