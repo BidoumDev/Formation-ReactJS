@@ -3,11 +3,19 @@ import style from './Button.module.css'
 import PropTypes from 'prop-types'
 
 const Button = (props) => {
-    console.log(props);
+    let isClicked = false;
+    console.log(isClicked, props);
     return (
-        <div style={{...props.style,backgroundColor: props.bgColor}} className={style.Button} data-testid="Button">
+        <>
+        <div>isClicked:{isClicked}</div>
+        <div 
+            style={{...props.style,backgroundColor: props.bgColor}} 
+            className={style.Button} 
+            data-testid="Button"
+        >
             {props.children}
         </div>
+        </>
     );
 }
 Button.propTypes={

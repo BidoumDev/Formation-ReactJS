@@ -1,0 +1,7 @@
+Constantes et sceaux : 
+    Ne peut pas etre modifié/ajouté/
+    Object.frozen
+    Object.isFrozen
+
+    Peut être modifié en valeur, mais pas de changement des propriétés
+    Object.seal
