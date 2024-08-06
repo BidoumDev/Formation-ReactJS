@@ -5,3 +5,4 @@ Constantes et sceaux :
 
     Peut être modifié en valeur, mais pas de changement des propriétés
     Object.seal
+

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const Button = (props) => {
     //let isClicked = false;
     //console.log(isClicked, props);
-    const [isClicked, setIsClicked] = useState(1)
+    const [isClicked, setIsClicked] = useState(-1)
 
     useEffect(() => {
         console.log('dans l effet', isClicked);
@@ -13,6 +13,21 @@ const Button = (props) => {
         //effect
       };
     }, [isClicked])     // Ce qui déclenche
+
+    useEffect(() => { 
+        // Mount          
+        setIsClicked(0);
+      return () => {
+        // Unmount
+      };
+    }, [])              // Se déclenche comme un constructeur ou onReady
+
+    useEffect(() => {
+        console.log("");
+      return () => {
+      };
+    })                  // Se déclenche à chaque changement
+
     return (
         <>
         <div>isClicked:{isClicked? 'Oui': 'Non'}</div>
