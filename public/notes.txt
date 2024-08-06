@@ -6,3 +6,5 @@ Constantes et sceaux :
     Peut être modifié en valeur, mais pas de changement des propriétés
     Object.seal
 
+Générer à partir des templates (terminal):
+    yarn genLayout FlexWFirstGrow FlexHThirdGrow

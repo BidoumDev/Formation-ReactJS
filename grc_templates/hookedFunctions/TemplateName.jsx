@@ -1,3 +1,6 @@
+/*
+ Template servant à la création des hook
+*/
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TemplateName.module.css';

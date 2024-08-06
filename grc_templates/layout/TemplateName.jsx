@@ -1,3 +1,6 @@
+/*
+ Template servant à la création des layout
+*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './TemplateName.module.css';
