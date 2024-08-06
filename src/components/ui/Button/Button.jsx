@@ -5,10 +5,13 @@ import PropTypes from 'prop-types'
 const Button = (props) => {
     //let isClicked = false;
     //console.log(isClicked, props);
-    const [isClicked, setIsClicked] = useState(-1)
+    const [isClicked, setIsClicked] = useState(false)
 
     useEffect(() => {
         console.log('dans l effet', isClicked);
+      setTimeout(function(){
+        setIsClicked(false);
+      }, 300);
       return () => {
         //effect
       };
@@ -31,7 +34,7 @@ const Button = (props) => {
     return (
         <>
         <div>isClicked:{isClicked? 'Oui': 'Non'}</div>
-        <div 
+        <button 
             style={{...props.style,backgroundColor: props.bgColor}} 
             className={`${style.Button}${isClicked?' '+style.clicked:''}`}
             data-testid="Button"
@@ -40,7 +43,7 @@ const Button = (props) => {
             }}
         >
             {props.children}
-        </div>
+        </button>
         </>
     );
 }
