@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
  
-const initialState = {};
 const MemeForm  = (props) => {
-  //const [state, setstate] = useState(initialState);
-  //const [text, setText] = useState(props.meme.text);
-  const [meme, setMeme] = useState(props.meme);
-  useEffect(() => {
-    //mount
-    return () => {
-      //unmount
-    };
-  }, []);
+  
   const updateString = (evt) => {
     const newM = {...props.meme };
     newM[evt.target.name] = evt.target.value;
@@ -38,7 +29,7 @@ const MemeForm  = (props) => {
     <div className={styles.MemeForm} data-testid="MemeForm">
       <form onSubmit={evt=>{
         evt.preventDefault();
-        props.onMemeChange(meme);
+        props.onMemeChange(props.meme);
       }}>
         <label htmlFor="titre"><h1>Titre</h1></label>
         <br />
@@ -109,7 +100,7 @@ const MemeForm  = (props) => {
         <input name="underline" id="underline" type="checkbox" 
           onChange={updateChecked}
         />&nbsp;<label htmlFor="underline"><h2 style={{display:'inline'}}>underline</h2></label>&nbsp;<h2 style={{display:'inline'}}>/</h2>&nbsp;
-        <label for="italic"><h2 style={{display:'inline'}}>italic</h2></label>&nbsp;
+        <label htmlFor="italic"><h2 style={{display:'inline'}}>italic</h2></label>&nbsp;
         <input name="italic" id="italic" type="checkbox" 
           onChange={updateChecked}/>
         <hr />

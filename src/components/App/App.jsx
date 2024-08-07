@@ -14,7 +14,8 @@ import Header from '../ui/Header/Header'
 import NavBar from '../ui/NavBar/NavBar'
 import Footer from '../ui/Footer/Footer'
 import FlexWFirstGrow from '../layout/FlexWFirstGrow/FlexWFirstGrow'
-import MemeForm from '../functionnal/MemeForm/MemeForm'
+//import MemeForm from '../functionnal/MemeForm/MemeForm'
+import MemeForm from '../functionnal/MemeForm/MemeForm.connected'
 //import MemeSvgViewer from '../ui/MemeSVGViewer/MemeSVGViewer'
 import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 
@@ -35,9 +36,7 @@ const App = (props) => {
             <NavBar/>
             <FlexWFirstGrow>
                 <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
-                <MemeForm images={images} meme={meme} onMemeChange={newMeme => {
-                  setMeme(newMeme);
-                }}/>
+                <MemeForm />
             </FlexWFirstGrow>
             <div>{JSON.stringify(images).substring(1,10)}</div>
             <Footer />
