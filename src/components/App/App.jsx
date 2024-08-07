@@ -19,7 +19,7 @@ import MemeForm from '../functionnal/MemeForm/MemeForm'
 import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
 
 const App = (props) => {
-  const [meme, setMeme] = useState(emptyMeme);
+  const [meme, setMeme] = useState({...emptyMeme, text:"React c'est super"});
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -34,10 +34,12 @@ const App = (props) => {
             <Header></Header>
             <NavBar/>
             <FlexWFirstGrow>
-                <MemeSVGViewer image={undefined} meme={emptyMeme} bassPath="" />
-                <MemeForm images={images} />
+                <MemeSVGViewer image={images.find((item)=>item.id===meme.imageId)} meme={meme} basePath="" />
+                <MemeForm images={images} meme={meme} onMemeChange={newMeme => {
+                  setMeme(newMeme);
+                }}/>
             </FlexWFirstGrow>
-            <div>{JSON.stringify(images)}</div>
+            <div>{JSON.stringify(images).substring(1,10)}</div>
             <Footer />
         </FlexHThirdGrow>
     </div>
