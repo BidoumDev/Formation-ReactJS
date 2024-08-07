@@ -1,33 +1,27 @@
 /*
-
-
-  _____ _____ __  __ ____  _        _  _____ _____   _   _ ___ 
- |_   _| ____|  \/  |  _ \| |      / \|_   _| ____| | | | |_ _|
-   | | |  _| | |\/| | |_) | |     / _ \ | | |  _|   | | | || | 
-   | | | |___| |  | |  __/| |___ / ___ \| | | |___  | |_| || | 
-   |_| |_____|_|  |_|_|   |_____/_/   \_\_| |_____|  \___/|___|
-                                                               
-
-
+ * MemeSVGViewer
 */
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './MemeSVGViewer.module.css';
+import React from 'react'
+import {MemeSVGViewer as UNCONNECTEDMemeSVGViewer} from 'orsys-tjs-meme'
+import {useSelector} from 'react-redux'
 
-const MemeSvgViewer = (props) => {     // Arrow function
+const MemeSVGViewer = (props) => {
+
+  const images = useSelector((storeState)=> {
+    return storeState.ressources.images.find(i=>i.id===storeState.current.imageId);
+  });
+  const meme = useSelector((storeState)=> {
+    return storeState.current;
+  });
+
   return (
-    <div className={styles.MemeSvgViewer} data-testid="MemeSVGViewer">
-      {props.children}
-    </div>
-  );
-};
+    <UNCONNECTEDMemeSVGViewer 
+      {...props} 
+      image={images} 
+      meme={meme}
+      //onMemeChange={(meme) => dispatch(changeMeme(meme))} 
+    />
+  )
+}
 
-MemeSvgViewer.propTypes = {
-  children: PropTypes.any.isRequired
-};
-
-MemeSvgViewer.defaultProps = {
-  children: 'Template MemeSVGViewer'
-};
-
-export default MemeSvgViewer;
+export default MemeSVGViewer
