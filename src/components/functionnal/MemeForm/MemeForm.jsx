@@ -24,6 +24,16 @@ const MemeForm  = (props) => {
     newM[evt.target.name] = parseInt(evt.target.value, 10);
     props.onMemeChange(newM);
   }
+  const updateChecked = (evt) => {
+    const newM = {...props.meme };
+    newM[evt.target.name] = evt.target.checked;
+    props.onMemeChange(newM);
+  }
+  /*const updateImage = (evt) => {
+    const newM = {...props.meme };
+    newM[evt.target.imageId] = parseInt(evt.target.value, 10);
+    props.onMemeChange(newM);
+  }*/
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
       <form onSubmit={evt=>{
@@ -39,11 +49,21 @@ const MemeForm  = (props) => {
         <hr />
         <label htmlFor="image"><h2>Image</h2></label>
         <br />
-        <select name="image" id="image" onChange={updateNumber} value={props.meme.value}>
+        <select 
+          name="image" 
+          id="image" 
+          onChange={(evt) => {
+            props.onMemeChange({
+              ...props.meme,
+              imageId: Number(evt.target.value),
+            });
+          }}
+          value={props.meme.imageId}
+        >
           {/*<option value="-1">No image</option>*/}
           {
             props.images.map((item, index)=>{
-              return (<option key={index+'img'} value="{item.id}">{item.name}</option>)
+              return (<option key={index+'img'} value={item.id}>{item.name}</option>)
             })
           }
         </select>
@@ -86,7 +106,12 @@ const MemeForm  = (props) => {
           onChange={updateString}
         />
         <br />
-        <input name="underline" id="underline" type="checkbox" />&nbsp;<label htmlFor="underline"><h2 style={{display:'inline'}}>underline</h2></label>&nbsp;<h2 style={{display:'inline'}}>/</h2>&nbsp;<label for="italic"><h2 style={{display:'inline'}}>italic</h2></label>&nbsp;<input name="italic" id="italic" type="checkbox" />
+        <input name="underline" id="underline" type="checkbox" 
+          onChange={updateChecked}
+        />&nbsp;<label htmlFor="underline"><h2 style={{display:'inline'}}>underline</h2></label>&nbsp;<h2 style={{display:'inline'}}>/</h2>&nbsp;
+        <label for="italic"><h2 style={{display:'inline'}}>italic</h2></label>&nbsp;
+        <input name="italic" id="italic" type="checkbox" 
+          onChange={updateChecked}/>
         <hr />
         <br />
         <Button type="submit" bgColor="skyblue">Valider</Button>
